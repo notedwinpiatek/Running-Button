@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guzik</title>
+</head>
+<body>
+    <button onmouseover="run()"
+        style="position: fixed;"
+        id="btn"> 
+    Złap mnie</button>
+
+    <script>
+        function run() {
+            let btn = document.getElementById("btn");
+            let r = Math.random();
+            r *= window.innerHeight; //100;
+            r = Math.round(r);
+            r -= btn.clientHeight;
+            let top = r.toString() + "px";
+            let left = "100px";
+            btn.style.top = top;
+            btn.style.left = left;
+            console.log("Najechałeś na guzik")
+        }
+    </script>
+</body>
+</html>
