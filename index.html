@@ -7,7 +7,10 @@
     <title>Guzik</title>
 </head>
 <body>
-    <button onmouseover="run()"
+    <h1 style="text-align: center;"> Spróbuj szczęścia i kliknij guzik</h1>
+    <hr>
+    <button
+        onclick="win()"
         style="position: fixed;"
         id="btn"> 
     Złap mnie</button>
@@ -16,15 +19,25 @@
         function run() {
             let btn = document.getElementById("btn");
             let r = Math.random();
-            r *= window.innerHeight; //100;
+            r *= window.innerHeight; 
             r = Math.round(r);
             r -= btn.clientHeight;
             let top = r.toString() + "px";
-            let left = "100px";
             btn.style.top = top;
+
+            r =  Math.random();
+            r *= window.innerWidth; 
+            r = Math.round(r);
+            r -= btn.clientWidth;
+            let left = r.toString() + "px";
             btn.style.left = left;
+
             console.log("Najechałeś na guzik")
         }
+        function win() {
+            window.alert("Gratki!");
+        }
+        setInterval("run()", 1000);
     </script>
 </body>
 </html>
